@@ -1,0 +1,66 @@
+
+> client@0.0.0 lint
+> eslint .
+
+
+C:\Users\btani\OneDrive\Desktop\website1\CampusConnect\client\src\components\PostCard.tsx
+  39:18  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\btani\OneDrive\Desktop\website1\CampusConnect\client\src\context\AuthContext.tsx
+  14:23  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  15:26  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  26:5   error  Error: This value cannot be modified
+
+Modifying a variable defined outside a component or hook is not allowed. Consider using an effect.
+
+C:\Users\btani\OneDrive\Desktop\website1\CampusConnect\client\src\context\AuthContext.tsx:26:5
+  24 |
+  25 |     // Configure axios base URL
+> 26 |     axios.defaults.baseURL = '/api';
+     |     ^^^^^^^^^^^^^^ value cannot be modified
+  27 |
+  28 |     useEffect(() => {
+  29 |         const storedUser = localStorage.getItem('user');  react-hooks/immutability
+  41:36  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+  50:39  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                   @typescript-eslint/no-explicit-any
+
+C:\Users\btani\OneDrive\Desktop\website1\CampusConnect\client\src\pages\Chat.tsx
+  60:21  error  Error: Cannot access variable before it is declared
+
+`scrollToBottom` is accessed before it is declared, which prevents the earlier access from updating when this value changes over time.
+
+C:\Users\btani\OneDrive\Desktop\website1\CampusConnect\client\src\pages\Chat.tsx:60:21
+  58 |                     const res = await axios.get(`/messages/${selectedUser.id}`);
+  59 |                     setMessages(res.data);
+> 60 |                     scrollToBottom();
+     |                     ^^^^^^^^^^^^^^ `scrollToBottom` accessed before it is declared
+  61 |                 } catch (error) {
+  62 |                     console.error('Error fetching messages:', error);
+  63 |                 }
+
+C:\Users\btani\OneDrive\Desktop\website1\CampusConnect\client\src\pages\Chat.tsx:90:5
+  88 |     }, [selectedUser]);
+  89 |
+> 90 |     const scrollToBottom = () => {
+     |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 91 |         messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+> 92 |     };
+     | ^^^^^^^ `scrollToBottom` is declared here
+  93 |
+  94 |     const handleSendMessage = async (e: React.FormEvent) => {
+  95 |         e.preventDefault();  react-hooks/immutability
+
+C:\Users\btani\OneDrive\Desktop\website1\CampusConnect\client\src\pages\Login.tsx
+  29:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\btani\OneDrive\Desktop\website1\CampusConnect\client\src\pages\Profile.tsx
+   6:16  error  'MapPin' is defined but never used        @typescript-eslint/no-unused-vars
+   6:34  error  'Users' is defined but never used         @typescript-eslint/no-unused-vars
+  19:12  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+C:\Users\btani\OneDrive\Desktop\website1\CampusConnect\client\src\pages\Register.tsx
+  35:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+✖ 12 problems (12 errors, 0 warnings)
+

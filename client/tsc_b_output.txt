@@ -1,0 +1,2 @@
+src/pages/Profile.tsx(6,16): error TS6133: 'MapPin' is declared but its value is never read.
+src/pages/Profile.tsx(6,34): error TS6133: 'Users' is declared but its value is never read.
